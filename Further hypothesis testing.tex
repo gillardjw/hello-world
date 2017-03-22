@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+\hoffset=-10mm \textwidth=170mm \topmargin=0mm \textheight= 230mm
+
+\begin{document}\nonumber
+\textbf{Further hypothesis testing - an example of the central limit theorem}\\
+
+The hypothesis tests considered so far are based on scenarios when the data are normally distributed. This small section of notes will show that the central limit theorem can be used to design similar tests when the sample sizes are large enough for this theorem to apply.\\
+
+Suppose therefore that $X$ is a random variable with mean $\mu$ and variance $\sigma^{2}$. Let $X_{1},\ldots,X_{n}$ be a random sample from a distribution of $X$, then by the central limit theorem the statistic $$z=\frac{\bar{X}-\mu_{0}}{\sigma/\sqrt{n}}$$ under a null hypothesis $H_{0}:\mu=\mu_{0}$ is approximately $N[0,1]$ for large $n$.\\
+
+This method is widely applicable, and the example that will be demonstrated here involves the binomial distribution. The binomial distribution is characterised by two parameters: $p$ and $n$. $n$ is the number of trials, and $p$ is the probability of success. Lets imagine that we want to test hypotheses concerning $p$. The theory is contained here.\\
+
+Suppose that we observe a sequence of Bernoulli trials with unknown success probability $p$, and we wish to test the null hypothesis against a suitable one or two tailed alternative. Let $Y$ be the number of successes obtained in $n$ trials and let $\hat{p}=\frac{Y}{n}$ be the observed proportion of successful trials.\\
+
+It follows that $Y$ has a binomial distribution, $B[n,p]$, which is approximately $N[np,np(1-p)]$ for large $n$. Thus $\hat{p}$ is approximately $N[p,\frac{p(1-p)}{n}]$ (why?) and the standardised statistic $$z=\frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$$ is approximately $N[0,1]$ under a null hypothesis $H_{0}:p=p_0$. We can then reject or accept $H_{0}$ by comparing $z$ with the appropriate critical value of the normal distribution.\\
+
+\textbf{Example}\\
+A drug company claims in an advertisement that $60\%$ of people suffering from a certain complaint gain instant relief by using a particular product. In a random sample, 106 out of 200 did gain instant relief. Test the validity of this claim, and find the p-value.\\  
+
+The sample is large enough to use the normal approximation. The test statistic is $$z=\frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}=\frac{0.53-0.6}{\sqrt{1/200 \times 0.6 \times 0.4}}=-2.021$$
+The p-value for a one tailed test (with alternative $p<0.6$ or $p>0.6$) is $P[N[0,1]<-2.021]=0.022$. This is small and so the null hypothesis $p=0.6$ is rejected. The p-value for a two tailed test is $2 \times 0.022=0.044$. This is still small, and so for a $5\%$ significance level, the null hypothesis is rejected again.
+
+
+\end{document}
