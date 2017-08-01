@@ -1,4 +1,4 @@
 # hello-world
-Starting to learn GitHib
+Starting to learn GitHub
 
 My name is Jonathan Gillard
